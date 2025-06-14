@@ -1,0 +1,18 @@
+<div class="home-container">
+  <div class="content">
+    <ng-container *ngIf="selectedCocktail$ | async as cocktail; else loading">
+      <app-cocktail-card [cocktail]="cocktail"></app-cocktail-card>
+    </ng-container>
+    <ng-template #loading>
+      <div class="loading-container" *ngIf="loading$ | async">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+    <div class="error-message" *ngIf="error$ | async as error">
+      {{ error }}
+    </div>
+  </div>
+  <button class="refresh-button" (click)="onRefreshClick()" *ngIf="!(loading$ | async)">
+    Get Another Cocktail
+  </button>
+</div>

@@ -1,0 +1,60 @@
+.cocktail-card {
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.cocktail-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-right: 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.cocktail-image {
+  flex: 0 0 300px;
+  margin-bottom: 1rem;
+  min-height: 450px;
+  min-width: 400px;
+  margin-right: 4rem;
+}
+
+.cocktail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cocktail-details {
+  flex: 1;
+}
+
+.card-title {
+  margin: 0 0 1rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.ingredients {
+  margin: 1rem 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+
+    li {
+      padding: 0.25rem 0;
+      color: #666;
+    }
+  }
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+} 

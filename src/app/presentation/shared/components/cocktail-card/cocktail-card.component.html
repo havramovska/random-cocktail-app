@@ -1,0 +1,26 @@
+<div class="cocktail-card">
+  <div class="cocktail-content">
+    <div class="cocktail-image">
+      <img [src]="cocktail.imageUrl"
+           [alt]="cocktail.title"
+           class="cocktail-img">
+    </div>
+    <div class="cocktail-details">
+      <h2 class="card-title">{{ cocktail.title }}</h2>
+      <p><strong>Category: </strong>{{ cocktail.category }}</p>
+      <p><strong>Glass: </strong>{{ cocktail.glass }}</p>
+      <p><strong>Alcoholic: </strong>{{ cocktail.alcoholic }}</p>
+      
+      <div class="ingredients">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li *ngFor="let ingredient of cocktail | ingredients">
+            {{ ingredient.measure }} {{ ingredient.ingredient }}
+          </li>
+        </ul>
+      </div>
+      
+      <p class="description"><strong>Instructions: </strong><span [innerHTML]="cocktail | translateInstructions:(selectedLanguage$ | async)"></span></p>
+    </div>
+  </div>
+</div> 
